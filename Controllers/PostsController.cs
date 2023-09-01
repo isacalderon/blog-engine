@@ -1,5 +1,6 @@
 // controller to do the crud in Posts
 using Microsoft.AspNetCore.Mvc;
+using blog_engine.Repository; 
 
 namespace blog_engine.Controllers;
 
@@ -8,15 +9,21 @@ public class PostsController: ControllerBase{
 
     private readonly ILogger<PostsController> _logger;
 
-    public PostsController(ILogger<PostsController> logger)
+    private readonly BlogEngineContext _context;
+
+    public PostsController(ILogger<PostsController> logger, BlogEngineContext context)
     {
         _logger = logger;
+        _context = context;
     }
 
     [HttpGet("posts", Name = "GetPosts")]
-    public IEnumerable<Posts> Get()
+    public IActionResult Get()
     {
-        throw new NotImplementedException();
+        _logger.LogInformation("GetPosts");
+        var posts = _context.Posts.ToList();
+        _logger.LogInformation($"GetPosts: {posts.Count}");
+       return Ok(posts); 
     }
 
     [HttpGet("posts/{id}", Name = "GetPost")]
