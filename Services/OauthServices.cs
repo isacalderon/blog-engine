@@ -4,7 +4,9 @@ using System.Security.Claims;
 using System.Text;
 using blog_engine.Repository;
 using Microsoft.IdentityModel.Tokens;
+using blog_engine.Dto;
 
+namespace blog_engine.Services;
 public class OauthService : IOauthService{
 
     private readonly ILogger<OauthService> _logger;

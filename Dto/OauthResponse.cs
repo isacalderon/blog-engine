@@ -1,3 +1,4 @@
+namespace blog_engine.Dto; 
 public class OauthResponse{
      public string code { get; set; }=default!;
     public string? message { get; set; }

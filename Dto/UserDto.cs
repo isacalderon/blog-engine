@@ -1,3 +1,4 @@
+namespace blog_engine.Dto; 
 public class UserDto{
     public string email { get; set; }
 
