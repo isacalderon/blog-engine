@@ -26,8 +26,8 @@ public class PostsController: ControllerBase{
        return Ok(posts); 
     }
 
-    [HttpGet("posts/{id}", Name = "GetPost")]
-    public Posts Get(int id)
+   /* [HttpGet("posts/{id}", Name = "GetPost")]
+    public PostsDto Get(int id)
     {
        throw new NotImplementedException();
     }
@@ -48,6 +48,6 @@ public class PostsController: ControllerBase{
     public Posts Delete(int id)
     {
        throw new NotImplementedException();
-    }
+    }*/
 
 }
